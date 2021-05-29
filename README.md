@@ -1,13 +1,28 @@
-# Tabletop
-## King of New York
+# King of New York
+## Terminology
+Heart
+
+## Things
 - Dice
   - 6 sides
     1. Heart
+        - Add 1 to Health Metre
     2. Star
+        - Add 1 to VP Metre
+        - Only available to Super Star card holder
     3. Energy
+        - Add 1 to Money
     4. Claw
-    5. Stomp
+        - Add 1 to Attack Damage
+    5. Building
+        - Add 1 to Stomp
     6. Skull
+        - Add 1 to Skull Metre
+        - 1 Skull: Borough Armies attack Player
+        - 2 Skulls: Borough Armies attack all Players in current Borough
+        - 3 Skulls:
+            - All Borough Armies attack all Players in respective Boroughs
+            - Gain Statue of Liberty
   - roll sequence
     1. Roll 5 dice
     2. Keep 0-5 OR Resolve
