@@ -46,7 +46,14 @@ const init = function() {
     // Add dom item to .keep-pile
   }
 
+  const moveRemainingDice = function() {
+    rollPile.querySelectorAll('li').forEach(function(item) {
+      keepPile.appendChild(item);
+    });
+  }
+
   const rollBtn = document.querySelector('.roll-dice');
+  const resolveBtn = document.querySelector('.resolve-dice');
   const rollPile = document.querySelector('.roll-pile ul');
   const keepPile = document.querySelector('.keep-pile ul');
 
@@ -70,23 +77,46 @@ const init = function() {
       console.log(rollPile);
       rollPile.querySelectorAll('button').forEach(function(item){
         item.addEventListener('click', moveDie);
+        item.classList.add('die');
       });
       
     } else {
-      alert('Time to Resolve!!!')
+      moveRemainingDice();
     }
     // Increment rollCounter
     
   })
-    
+
+  resolveBtn.addEventListener('click', function() {
+    // Disable roll
+    rollBtn.disabled = true;
+
+    // If any remaining dice, keep them
+    if(rollPile.querySelectorAll('button').length > 0){
+      moveRemainingDice();
+    }
+
+    // Resolve
+    /**// Takes array of dice and maps out number of values per side
+const mapDiceRolls = (diceArray) => {
+
+  // First, sort all values
+  const rollMap = diceArray.reduce(function (acc, curr) {
+      if (typeof acc[curr] == 'undefined') {
+        acc[curr] = 1;
+      } else {
+        acc[curr] += 1;
+      }
+      return acc;
+    }, {});
+
+  return rollMap;
 }
 
-
-
-const discardResult = function(event){
-  console.log(event);
-  rollPile.appendChild(event.target.parentNode);
-
+const rollMap = mapDiceRolls(["CLAW", "HEART", "CLAW", "STOMP", "ENERGY", "HEART"]);
+console.log(rollMap); */
+  })
+    
 }
 
 init();

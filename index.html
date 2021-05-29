@@ -15,7 +15,8 @@
     ul li {
       margin: 0.5rem;
     }
-    li button{
+    
+    .die {
       width: 5rem;
       height: 5rem;
       border-radius: 1rem;
@@ -24,7 +25,12 @@
 </head>
 <body>
   <div class="wrapper">
-    <button class="roll-dice">Roll Dice</button>
+    <section class="roll-nav">
+      <ul>
+        <li><button class="roll-dice">Roll Dice</button></li>
+        <li><button class="resolve-dice">Resolve</button></li>
+      </ul>
+    </section>
     <section class="roll-pile">
       <h2>Roll Result</h2>
       <ul>
@@ -34,6 +40,95 @@
       <h2>Keep Pile</h2>
       <ul>
       </ul>
+    </section>
+    <section class="deck">
+      <h2>Active Cards</h2>
+      <h2>Discards</h2>
+    </section>
+    <section class="monsters">
+      <ul>
+        <li>Monster 1
+          <ul>
+            <li>Health: [x]</li>
+            <li>Victory Points: [y]</li>
+            <li>Money: [z]</li>
+            <li>Cards
+              <ul>
+                <li>Card 1</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Monster 2
+          <ul>
+            <li>Health: [x]</li>
+            <li>Victory Points: [y]</li>
+            <li>Money: [z]</li>
+            <li>Cards
+              <ul>
+                <li>Card 1</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Monster 3
+          <ul>
+            <li>Health: [x]</li>
+            <li>Victory Points: [y]</li>
+            <li>Money: [z]</li>
+            <li>Cards
+              <ul>
+                <li>Card 1</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Monster 4
+          <ul>
+            <li>Health: [x]</li>
+            <li>Victory Points: [y]</li>
+            <li>Money: [z]</li>
+            <li>Cards
+              <ul>
+                <li>Card 1</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section class="map">
+      <h2>Calgary</h2>
+      <section class="downtown">
+        <h2>Downtown</h2>
+        <div>Buildings</div>
+        <div>Armies</div>
+        <div>Monsters</div>
+      </section>
+      <section class="beltline">
+        <h2>Beltine</h2>
+        <div>Buildings</div>
+        <div>Armies</div>
+        <div>Monsters</div>
+      </section>
+      <section class="kensington">
+        <h2>Kensington</h2>
+        <div>Buildings</div>
+        <div>Armies</div>
+        <div>Monsters</div>
+      </section>
+      <section class="bridgeland">
+        <h2>Bridgeland</h2>
+        <div>Buildings</div>
+        <div>Armies</div>
+        <div>Monsters</div>
+      </section>
+      <section class="inglewood">
+        <h2>Inglewood</h2>
+        <div>Buildings</div>
+        <div>Armies</div>
+        <div>Monsters</div>
+      </section>
     </section>
   </div>
 </body>
