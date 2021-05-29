@@ -1,7 +1,4 @@
 # King of New York
-## Terminology
-Heart
-
 ## Things
 - Dice
   - 6 sides
