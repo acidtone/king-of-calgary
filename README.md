@@ -1,4 +1,19 @@
 # King of New York
+## Turn sequence
+1. Pre-roll
+    - If in manhattan -> Add goodies
+    - Add pre-roll card effects
+2. Roll Dice
+    1. Roll 6 dice
+    2. Keep 0-6 OR Resolve
+    3. Roll leftovers
+    4. Keep 0-x dice OR Resolve
+    5. Roll leftovers
+3. Resolve Dice
+4. Move
+5. Buy cards
+6. End turn
+
 ## Things
 - Dice
   - 6 sides
