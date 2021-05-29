@@ -14,3 +14,19 @@ export const rollDice = function(numDie = 1, die = [1,2,3,4,5,6]) {
   return roll;
 }
 
+// Takes array of dice and maps out values
+export const mapDiceRolls = (diceArray) => {
+
+  // First, sort all values
+  const rollMap = diceArray.reduce(function (acc, curr) {
+      if (typeof acc[curr] == 'undefined') {
+        acc[curr] = 1;
+      } else {
+        acc[curr] += 1;
+      }
+      return acc;
+    }, {});
+
+  return rollMap;
+}
+
