@@ -2,12 +2,12 @@
 ## King of New York
 - Dice
   - 6 sides
-    - Heart
-    - Star
-    - Energy
-    - Claw
-    - Stomp
-    - Skull
+    1. Heart
+    2. Star
+    3. Energy
+    4. Claw
+    5. Stomp
+    6. Skull
   - roll sequence
     1. Roll 5 dice
     2. Keep 0-5 OR Resolve
@@ -15,6 +15,7 @@
     4. Keep 0-x dice OR Resolve
     5. Roll leftovers
     6. Resolve roll
+  - Individual die rolls need to be discrete
   - Turn state
   - Two extra dice tied to [two Deck cards]
   - Rerolls optional (unless [Deck card] in play)
