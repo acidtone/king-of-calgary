@@ -32,8 +32,13 @@ Heart
     6. Resolve roll
   - Individual die rolls need to be discrete
   - Turn state
+    - Roll pile
+    - Keep pile
   - Two extra dice tied to [two Deck cards]
   - Rerolls optional (unless [Deck card] in play)
+  - Resolve
+    - Order matters
+    - Each die side must be resolved at once
 - Deck
   - Cards change the rules -> hard problem to solve
   - TODO: find low-hanging fruit
