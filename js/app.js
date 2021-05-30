@@ -1,4 +1,4 @@
-import {rollDie, rollDice} from './utilities.js'
+import {rollDie, rollDice, mapDiceRolls} from './utilities.js'
 
 const init = function() {
   const die = [
@@ -46,11 +46,46 @@ const init = function() {
     // Add dom item to .keep-pile
   }
 
-  const moveRemainingDice = function() {
-    rollPile.querySelectorAll('li').forEach(function(item) {
-      keepPile.appendChild(item);
-    });
+
+  const resolveDice = function(){
+
+    // Disable rolling
+    rollBtn.disabled = true;
+
+    // TODO: hide unneeded sections
+
+    // If any remaining dice, keep them
+    const remainingDice =  rollPile.querySelectorAll('li');
+    if (remainingDice.length > 0) {
+      remainingDice.forEach(function(item) {
+        keepPile.appendChild(item);
+      });
+    }
+    
+    // Get values from dice
+    const keptDice = keepPile.querySelectorAll('button');
+    const keptDiceVals = [];
+
+    for(let dieVal of keptDice){
+      keptDiceVals.push(dieVal.innerHTML);
+    }
+
+    // Create a map of the rolled values
+    const rollMap = mapDiceRolls(keptDiceVals);
+    console.log(rollMap);
+
+    // Add map values (TODO: in own section?)
+    let keptValuesDisplay = '';
+    for(let faceValue in rollMap){
+        keptValuesDisplay += `<li><button>${faceValue}${rollMap[faceValue]}</button></li>` //??
+    }
+    rollPile.innerHTML = keptValuesDisplay; //TODO: shouldn't be rollPile, need own section
+
+    resolveBtn.disabled = true;
+
   }
+
+
 
   const rollBtn = document.querySelector('.roll-dice');
   const resolveBtn = document.querySelector('.resolve-dice');
@@ -59,7 +94,11 @@ const init = function() {
 
   let rollCount = 0;
 
+  resolveBtn.disabled = true; // disable by default
+
   rollBtn.addEventListener('click', function() {
+    resolveBtn.disabled = false; // enable resolve after first roll
+
     const numDie = 6 - keepPile.querySelectorAll('li').length;
 
     const result = rollDice(numDie, die);
@@ -81,41 +120,12 @@ const init = function() {
       });
       
     } else {
-      moveRemainingDice();
-    }
-    // Increment rollCounter
-    
-  })
-
-  resolveBtn.addEventListener('click', function() {
-    // Disable roll
-    rollBtn.disabled = true;
-
-    // If any remaining dice, keep them
-    if(rollPile.querySelectorAll('button').length > 0){
-      moveRemainingDice();
+      resolveDice();
     }
 
-    // Resolve
-    /**// Takes array of dice and maps out number of values per side
-const mapDiceRolls = (diceArray) => {
-
-  // First, sort all values
-  const rollMap = diceArray.reduce(function (acc, curr) {
-      if (typeof acc[curr] == 'undefined') {
-        acc[curr] = 1;
-      } else {
-        acc[curr] += 1;
-      }
-      return acc;
-    }, {});
-
-  return rollMap;
-}
-
-const rollMap = mapDiceRolls(["CLAW", "HEART", "CLAW", "STOMP", "ENERGY", "HEART"]);
-console.log(rollMap); */
   })
+
+  resolveBtn.addEventListener('click', resolveDice)
     
 }
 
